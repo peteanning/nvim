@@ -7,10 +7,9 @@ noremap j h
 let mapleader = ","
 
 call plug#begin('~/.config/nvim/data')
-
  Plug 'joshdick/onedark.vim'
  Plug 'wakatime/vim-wakatime'
- "Plug 'tpope/vim-fugitive'
+ Plug 'tpope/vim-fugitive'
  "Plug 'Yggdroot/indentLine'
 
  
@@ -21,12 +20,17 @@ call plug#begin('~/.config/nvim/data')
 " Plug 'puremourning/vimspector'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 au BufRead,BufNewFile *.sbt set filetype=scala
 
 if filereadable(expand("~/.config/nvim/coc-mappings.vim"))
   source ~/.config/nvim/coc-mappings.vim
+endif
+
+if filereadable(expand("~/.config/nvim/functions.vim"))
+  source ~/.config/nvim/functions.vim
 endif
 
 if filereadable(expand("~/.config/nvim/LanguageClient-neovim-mappings.vim"))
@@ -39,7 +43,7 @@ endif
 " Theme
 "set termguicolors
 
-set background=dark
+" set background=dark
 " onedark.vim override: Don't set a background color when running in a terminal;
 " just use the terminal's background color
 "if (has("autocmd") && !has("gui_running"))
@@ -60,14 +64,17 @@ highlight StatusLineError guifg=#E06C75 guibg=#2C323C
 highlight StatusLineWarning guifg=#E5C07B guibg=#2C323C
 
 set statusline=%n\   " buffer number
-set statusline+=%t\ %M%r%h%w\  " file modified, readonly, help, preview
-"set statusline+=%#StatusLineError#%{CocMinimalErrors()}\ " coc-errors
-"set statusline+=%#StatusLineWarning#%{CocMinimalWarnings()}\ " coc-warnings
-"set statusline+=%#StatusLineStatus#%{CocMinimalStatus()}%#StatusLine#\ " coc status 
-set statusline+=%=%Y\  " filetype
-set statusline+=%{&ff}\  " right align line endings
-set statusline+=%l,%v\ " curser position
-set statusline+=%p%%\  " percentage on page
+set statusline+=%{FugitiveStatusline()} 
+" set statusline+=%t\ %M%r%h%w\  " file modified, readonly, help, preview
+" set statusline+=%#StatusLineError#%{CocMinimalErrors()}\ " coc-errors
+" set statusline+=%#StatusLineWarning#%{CocMinimalWarnings()}\ " coc-warnings
+" set statusline+=%#StatusLineStatus#%{CocMinimalStatus()}%#StatusLine#\ " coc status 
+" set statusline+=%=%Y\  " filetype
+" set statusline+=%{&ff}\  " right align line endings
+" set statusline+=%l,%v\ " curser position
+" set statusline+=%p%%\  " percentage on page
+
+
 
 " turn on syntax highlighting.
 if !exists("g:syntax_on")
