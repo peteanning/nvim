@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/data')
  Plug 'wakatime/vim-wakatime'
  Plug 'tpope/vim-fugitive'
  "Plug 'Yggdroot/indentLine'
-
+ Plug 'vim-airline/vim-airline'
  
   Plug 'autozimu/LanguageClient-neovim', {
      \ 'branch': 'next',
