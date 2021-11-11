@@ -48,7 +48,7 @@ nnoremap <leader>m :NERDTree<CR>
 " let g:vimspector_enable_mappings = 'HUMAN'
 
 " Theme
-"set termguicolors
+ set termguicolors
 
 " set background=dark
 " onedark.vim override: Don't set a background color when running in a terminal;
