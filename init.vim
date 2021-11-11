@@ -7,6 +7,7 @@ noremap j h
 let mapleader = ","
 
 call plug#begin('~/.config/nvim/data')
+ Plug 'preservim/nerdtree'
  Plug 'joshdick/onedark.vim'
  Plug 'wakatime/vim-wakatime'
  Plug 'tpope/vim-fugitive'
@@ -21,6 +22,7 @@ call plug#begin('~/.config/nvim/data')
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
  Plug 'ryanoasis/vim-devicons'
+ Plug 'rust-lang/rust.vim'
 call plug#end()
 
 au BufRead,BufNewFile *.sbt set filetype=scala
@@ -36,6 +38,11 @@ endif
 if filereadable(expand("~/.config/nvim/LanguageClient-neovim-mappings.vim"))
   source ~/.config/nvim/LanguageClient-neovim-mappings.vim
 endif
+
+" NERDTree mappings
+nnoremap <leader>m :NERDTree<CR>
+
+
 
 " vimspector
 " let g:vimspector_enable_mappings = 'HUMAN'
