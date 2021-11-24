@@ -37,4 +37,5 @@ call plug#begin('~/.config/nvim/data')
 call plug#end()
 ```
 
+
 Let me know if you find any errors
