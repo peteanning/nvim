@@ -2,7 +2,7 @@
 
 ## Setup
 - Install Neovim
-- Then extract this repo into the convig directory
+- Then extract this repo into the config directory
 - `'~/.config/nvim/data'` edit this value in init.vim to point at a directory where you want the plugin files to be installed
 - The setup uses Vim Plug so you will need to run :PlugInstall command from within nvim 
 
