@@ -14,13 +14,16 @@ call plug#begin('~/.config/nvim/data')
  "Plug 'Yggdroot/indentLine'
  Plug 'vim-airline/vim-airline'
  
-  Plug 'autozimu/LanguageClient-neovim', {
-     \ 'branch': 'next',
-     \ 'do': 'bash install.sh'
-     \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"    \ 'do': 'bash install.sh'
+"     \ }
+
 " Plug 'puremourning/vimspector'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+ Plug 'neoclide/coc-snippets'
+
+ "Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
  Plug 'ryanoasis/vim-devicons'
  Plug 'rust-lang/rust.vim'
 call plug#end()

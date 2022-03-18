@@ -26,7 +26,7 @@ set nowritebackup
 set updatetime=300
 
 " Don't give |ins-completion-menu| messages.
-set shortmess+=c
+" set shortmess+=c
 
 " Always show signcolumns
 set signcolumn=yes
