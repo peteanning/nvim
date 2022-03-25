@@ -1,0 +1,77 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+priority -50
+
+# snippet imp "Simple import"
+# import ${1:${2:Data}.${0:Text}}
+# endsnippet
+# 
+# snippet imp2 "Selective import" b
+# import ${1:${2:Data}.${3:Text}} (${4})${0}
+# endsnippet
+# 
+# snippet impq "Qualified import"
+# import qualified ${1:${2:Data}.${3:Text}} as ${0:`!p snip.rv = t[1].split(".")[-1]`}
+# endsnippet
+
+snippet spec "Create an HUnit Test template" b
+import Test.Hspec
+
+main = hspec $ do
+  describe "Vanilla Test" $ do
+    it "Foo should be true" $ do
+      1 == 1 \`shouldBe\` True
+
+endsnippet
+
+snippet deffer "Allows coding by intent" b
+{-# OPTIONS_GHC -Wno-deferred-out-of-scope-variables #-}
+endsnippet
+
+snippet it "Insert a test it should do something" 	  
+    it "Foo should be true" $ do
+      1 == 1 \`shouldBe\` True
+endsnippet
+
+snippet mod "Insert module definition based on filename" b
+module `!p snip.rv = snip.basename` where
+endsnippet
+
+snippet run "Insert a String -> IO () function that reads a file" b
+-- implement the main logic here
+pureRun :: String -> String
+pureRun contents = contents
+
+
+run :: String -> IO ()
+run filePath = do
+                 contents <- readFile filePath
+								 let result = pureRun contents
+								 return () 
+
+
+endsnippet

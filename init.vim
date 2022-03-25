@@ -45,7 +45,7 @@ endif
 " NERDTree mappings
 nnoremap <leader>m :NERDTree<CR>
 
-
+let g:UltiSnipsSnippetsDir = "~/.config/nvim/ultisnips"
 
 " vimspector
 " let g:vimspector_enable_mappings = 'HUMAN'
