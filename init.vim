@@ -25,8 +25,13 @@ call plug#begin('~/.config/nvim/data')
 
  "Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
  Plug 'ryanoasis/vim-devicons'
- Plug 'rust-lang/rust.vim'
+"  Plug 'rust-lang/rust.vim'
+ " Installed these two for https://github.com/ggandor/leap.nvim
+ Plug 'tpope/vim-repeat'
+ Plug 'ggandor/leap.nvim'
 call plug#end()
+
+lua require('leap').set_default_keymaps()
 
 au BufRead,BufNewFile *.sbt set filetype=scala
 
