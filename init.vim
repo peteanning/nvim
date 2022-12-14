@@ -1,3 +1,10 @@
+" The following lines open NERDTree
+" https://stackoverflow.com/questions/1979520/auto-open-nerdtree-in-every-tab/7640505#answer-7640505
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
+" end NERDTree stuff
+
 noremap ; l
 noremap l k
 noremap k j

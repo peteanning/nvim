@@ -10,6 +10,6 @@
       "filetypes": ["haskell", "lhaskell"]
     }
   },
-  "rust-analyzer.trace.server": "verbose"
+  "rust-analyzer.trace.server": "off"
 }
   
