@@ -36,11 +36,17 @@ call plug#begin('~/.config/nvim/data')
  " Installed these two for https://github.com/ggandor/leap.nvim
  Plug 'tpope/vim-repeat'
  Plug 'ggandor/leap.nvim'
+ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
 lua require('leap').set_default_keymaps()
 
 au BufRead,BufNewFile *.sbt set filetype=scala
+
+" added for markdown preview
+if filereadable(expand("~/.config/nvim/markdown-preview-mappings.vim"))
+  source ~/.config/nvim/markdown-preview-mappings.vim
+endif
 
 if filereadable(expand("~/.config/nvim/coc-mappings.vim"))
   source ~/.config/nvim/coc-mappings.vim
