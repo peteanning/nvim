@@ -37,6 +37,12 @@ call plug#begin('~/.config/nvim/data')
  Plug 'tpope/vim-repeat'
  Plug 'ggandor/leap.nvim'
  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+ " https://github.com/dpayne/CodeGPT.nvim
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'MunifTanjim/nui.nvim'
+ Plug 'dpayne/CodeGPT.nvim'
+
 call plug#end()
 
 lua require('leap').set_default_keymaps()
