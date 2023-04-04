@@ -1,6 +1,5 @@
 autocmd BufNewFile,BufRead *.puml set filetype=plantuml
 
-
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -65,7 +64,7 @@ let g:mkdp_browserfunc = ''
 let g:mkdp_preview_options = {
     \ 'mkit': {},
     \ 'katex': {},
-    \ 'uml': {},
+    \ 'uml': {'server': 'http://127.0.0.1:8000/plantuml/png'},
     \ 'maid': {},
     \ 'disable_sync_scroll': 0,
     \ 'sync_scroll_type': 'middle',
