@@ -10,6 +10,7 @@
       "filetypes": ["haskell", "lhaskell"]
     }
   },
-  "rust-analyzer.trace.server": "off"
+  "rust-analyzer.trace.server": "off",
+  "snippets.ultisnips.pythonPrompt": false
 }
   
