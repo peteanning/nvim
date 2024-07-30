@@ -139,7 +139,7 @@ set showtabline=1
 " display options
 set cursorline
 set number
-set relativenumber
+set nu
 set conceallevel=0
 
 " allows your update time to be a bit faster
