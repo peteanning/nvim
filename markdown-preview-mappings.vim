@@ -64,7 +64,7 @@ let g:mkdp_browserfunc = ''
 let g:mkdp_preview_options = {
     \ 'mkit': {},
     \ 'katex': {},
-    \ 'uml': {'server': 'http://127.0.0.1:8000/plantuml/png'},
+    \ 'uml': {'server': 'http://127.0.0.1:8090/plantuml/png'},
     \ 'maid': {},
     \ 'disable_sync_scroll': 0,
     \ 'sync_scroll_type': 'middle',
